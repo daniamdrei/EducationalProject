@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Blog extends Model
 {
     protected $fillable=[
+        'admin_id',
         'title',
         'content',
         'image',
@@ -17,5 +18,9 @@ class Blog extends Model
         return [
             'publish_at'=>'datetime',
         ];
+    }
+
+    public function admin(){
+        return $this->belongsTo(Admin::class);
     }
 }

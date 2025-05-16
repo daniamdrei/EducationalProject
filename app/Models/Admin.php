@@ -19,4 +19,8 @@ class Admin extends Model
             'password' => 'hashed',
         ];
     }
+
+    public function blogs(){
+        return $this->hasMany(Blog::class);
+    }
 }
